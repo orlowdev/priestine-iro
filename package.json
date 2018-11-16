@@ -1,0 +1,59 @@
+{
+  "name": "iro",
+  "version": "1.0.0",
+  "description": "`色`",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 15000 --require ts-node/register --require source-map-support/register --full-trace --bail $(find . -name '*.spec.ts' ! -ipath '*node_modules*')",
+    "coverage:cover": "nyc npm test",
+    "coverage:check": "nyc check-coverage --lines 75 --branches 75 --functions 75 --statements 75",
+    "tslint:check": "tslint --project tslint.json -t stylish",
+    "tslint:fix": "yarn tslint:check --fix",
+    "prettier:check": "prettier --list-different src/**/*.ts src/*.ts",
+    "prettier:fix": "prettier --write src/**/*.ts src/*.ts",
+    "style:check": "yarn prettier:check && yarn tslint:check",
+    "style:fix": "yarn prettier:fix && yarn tslint:fix",
+    "build:docs": "typedoc --out ./docs ./src --exclude '**/*.spec.ts' --ignoreCompilerErrors --mode file",
+    "build:dev": "rm -rf ./build && tsc --p tsconfig.build.json -w",
+    "build:ci": "tsc",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.8",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "prettier": "^1.15.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.1.6",
+    "yarn": "^1.12.3"
+  },
+  "nyc": {
+    "include": [
+      "src/**"
+    ],
+    "exclude": [
+      "src/**/*.spec.ts",
+      "src/*.spec.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text",
+      "json",
+      "html",
+      "lcov"
+    ]
+  }
+}
