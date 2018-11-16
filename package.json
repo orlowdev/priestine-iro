@@ -1,7 +1,7 @@
 {
-  "name": "iro",
-  "version": "1.0.0",
-  "description": "`色`",
+  "name": "@priestine/iro",
+  "version": "0.0.0-dev",
+  "description": "Iro brings colors to console output.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 15000 --require ts-node/register --require source-map-support/register --full-trace --bail $(find . -name '*.spec.ts' ! -ipath '*node_modules*')",
@@ -18,9 +18,33 @@
     "build:ci": "tsc",
     "start": "node src/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "keywords": [
+    "console",
+    "terminal",
+    "color",
+    "colour",
+    "nodejs",
+    "browser"
+  ],
+  "author": {
+    "email": "priestine1.dev@gmail.com",
+    "name": "Sergey Orlov",
+    "url": "https://priestine.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/priestine/iro.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/priestine/iro/issues"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
