@@ -149,7 +149,18 @@ export abstract class Iro {
    * @static
    */
   public static describe = (...x: any[]): typeof Iro => {
-    Iro.warn('"Shell.describe" is deprecated and will be removed in future releases. Please, use "Shell.log" instead.');
+    Iro.warn('"Shell.describe" is deprecated and will be removed in future releases. Please, use "Iro.log" instead.');
+    return Iro.log(...x);
+  }
+
+  /**
+   * Alias to `Iro.log`. Deprecated. Added for backwards compatibility with `@totemish/shell`.
+   * @alias log
+   * @deprecated
+   * @static
+   */
+  public static write = (...x: any[]): typeof Iro => {
+    Iro.warn('"Shell.write" is deprecated and will be removed in future releases. Please, use "Shell.log" instead.');
     return Iro.log(...x);
   }
 

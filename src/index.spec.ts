@@ -56,6 +56,12 @@ describe('Iro', () => {
     });
   });
 
+  describe('write', () => {
+    it('should return Iro', () => {
+      expect(Iro.write('')).to.equal(Iro);
+    });
+  });
+
   describe('red', () => {
     it('should apply red colour for Node.js console', () => {
       expect(Iro.red('hello')).to.equal('\u001b[31mhello\u001b[0m');
