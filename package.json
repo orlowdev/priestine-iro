@@ -2,7 +2,7 @@
   "name": "@priestine/iro",
   "version": "0.0.0-dev",
   "description": "Iro brings colors to console output.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha --timeout 15000 --require ts-node/register --require source-map-support/register --full-trace --bail $(find . -name '*.spec.ts' ! -ipath '*node_modules*')",
     "coverage:cover": "nyc npm test",
