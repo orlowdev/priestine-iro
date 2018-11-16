@@ -154,6 +154,14 @@ export abstract class Iro {
   }
 
   /**
+   * Alias to `Iro.breaks`. Deprecated. Added for backwards compatibility with `@totemish/shell`.
+   * @alias log
+   * @deprecated
+   * @static
+   */
+  public static blank = Iro.breaks;
+
+  /**
    * Alias to `Iro.log`. Deprecated. Added for backwards compatibility with `@totemish/shell`.
    * @alias log
    * @deprecated

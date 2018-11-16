@@ -136,6 +136,14 @@ describe('Iro', () => {
     });
   });
 
+  describe('blank', () => {
+    it('should return Iro', () => {
+      expect(Iro.blank()).to.equal(Iro);
+      expect(Iro.blank(2)).to.equal(Iro);
+      expect(Iro.blank(-1)).to.equal(Iro);
+    });
+  });
+
   describe('spaces', () => {
     it('should return one space if argument was not provided', () => {
       expect(Iro.space()).to.equal(' ');
